@@ -1,0 +1,30 @@
+Given Code:
+
+double pi = 3.14159; 
+int approx_pi = (int)pi + 0.5; 
+std::cout << approx_pi;
+
+Expected Output:
+
+The cast (int)pi truncates the value to 3. Then 0.5 is added after truncation, giving 3 + 0.5 = 3.5. But since approx_pi is an int, 3.5 is again truncated to 3.
+
+So, the output will be:
+
+3
+
+Correct Way to Round to Nearest Integer:
+
+To round pi to the nearest integer properly, add 0.5 before the cast:
+
+double pi = 3.14159;
+int approx_pi = (int)(pi + 0.5);
+std::cout << approx_pi;
+
+Output of Modified Code:
+
+3
+
+But if pi = 3.6, then 3.6 + 0.5 = 4.1 → cast to int becomes 4. So rounding works correctly.
+
+Let me know if you'd like to handle negative values properly too (since this method doesn't round negatives correctly).
+
